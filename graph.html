@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Transportation Graph</title>
+  <link rel="stylesheet" href="graph.css">
+  <script src="graph.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <p class="eyebrow">TRANSPORTATION MINI PROJECT</p>
+      <h1>Campus road network</h1>
+      <p class="intro">An undirected weighted graph of campus roads. Each edge label is the road distance in kilometres.</p>
+    </header>
+
+    <section class="controls" aria-label="Shortest path controls">
+      <label>From
+        <select id="source"></select>
+      </label>
+      <label>To
+        <select id="target"></select>
+      </label>
+      <button id="findPath" type="button">Show shortest path</button>
+      <button id="optimizeTour" type="button">Optimize delivery tour</button>
+      <button id="resetGraph" class="secondary" type="button">Reset</button>
+    </section>
+
+    <p id="result" class="result" aria-live="polite">Connecting to the Python routing service…</p>
+
+    <section class="graph-wrap" aria-label="Campus road graph">
+      <svg id="graph" viewBox="0 0 900 570" role="img" aria-labelledby="graphTitle graphDescription">
+        <title id="graphTitle">Weighted campus road network</title>
+        <desc id="graphDescription">Seven campus locations connected by fourteen undirected roads with distances in kilometres.</desc>
+        <g id="edges"></g>
+        <g id="nodes"></g>
+      </svg>
+    </section>
+
+    <footer class="legend">
+      <span><i class="swatch road"></i> Road</span>
+      <span><i class="swatch route"></i> Shortest path</span>
+      <span><i class="swatch tour"></i> Optimized tour</span>
+      <span>7 locations · 14 roads · Dijkstra’s algorithm</span>
+    </footer>
+  </main>
+</body>
+</html>
+
+
+
+
